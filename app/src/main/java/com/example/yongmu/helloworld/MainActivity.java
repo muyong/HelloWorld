@@ -98,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        System.exit(0);
+        //System.exit(0);
+        //finish();
+        moveTaskToBack(true);
     }
 
     private static String formatMessage(String message, String user) throws JSONException {
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void start() {
-        Request request = new Request.Builder().url("ws://10.0.14.100:8025/ws/chat").build();
+        Request request = new Request.Builder().url("ws://10.0.14.85:8025/ws/chat").build();
         EchoWebSocketListener listener = new EchoWebSocketListener();
         ws = client.newWebSocket(request, listener);
         //client.dispatcher().executorService().shutdown();
