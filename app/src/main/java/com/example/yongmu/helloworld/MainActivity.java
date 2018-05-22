@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void start() {
-        Request request = new Request.Builder().url("ws://10.0.14.85:8025/ws/chat").build();
+        Request request = new Request.Builder().url("ws://192.168.1.161:8025/ws/chat").build();
         EchoWebSocketListener listener = new EchoWebSocketListener();
         ws = client.newWebSocket(request, listener);
         //client.dispatcher().executorService().shutdown();
